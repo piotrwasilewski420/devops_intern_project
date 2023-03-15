@@ -1,0 +1,248 @@
+[33mcommit 0962ed7e8f5df8cf287c79975f9894f3189aebab[m[33m ([m[1;36mHEAD -> [m[1;32mrecommit[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Author: Patrick Baumgartner <patrick.baumgartner@42talents.com>
+Date:   Fri Mar 10 13:59:47 2023 +0000
+
+    Updating dependencies and docker containers to current versions
+    
+    See #1157
+
+[33mcommit cc4667122d4f06946f809389762a1a39b3dd1a41[m
+Author: Duncan Casteleyn <10881109+DuncanCasteleyn@users.noreply.github.com>
+Date:   Mon Jan 2 22:54:46 2023 +0100
+
+    Resource bundle not included in native image
+
+[33mcommit 2ceb8c16fd8517846f215c0138fc3923120deaba[m
+Author: Dave Syer <dsyer@vmware.com>
+Date:   Fri Mar 10 08:04:18 2023 +0000
+
+    Bump Spring Boot to 3.0.4
+
+[33mcommit bac74f7a99da7f4c7115d4611d470fdb03add5c0[m
+Author: Will 保哥 <doggy.huang@gmail.com>
+Date:   Mon Jan 23 01:58:14 2023 +0800
+
+    Update .gitattributes
+    
+    If I won't keep *.java file as LF newline, I can't run app because I can't pass "io.spring.javaformat:spring-javaformat-maven-plugin:0.0.31:validate" goal when I mount files into container.
+
+[33mcommit dd54a40501e73316006792f7df82a244ab811197[m
+Author: Will 保哥 <doggy.huang@gmail.com>
+Date:   Sun Jan 22 18:27:38 2023 +0800
+
+    Create .gitattributes
+    
+    fixes #1149
+
+[33mcommit 5ceba6d95c2bd0dc68d6bbd9d2bc7749b9aa15fe[m
+Author: Tugdual Grall <tgrall@github.com>
+Date:   Sat Mar 4 14:45:18 2023 +0100
+
+    issue #1176 codespaces badged
+
+[33mcommit 68fb7acacf993cd5f505a625dadbf3baf39553ae[m
+Author: Yan Zhang <Eskibear@users.noreply.github.com>
+Date:   Wed Feb 1 10:37:16 2023 +0800
+
+    Update devcontainer.json
+    
+    publisher id of vscode-boot-dev-pack has been changed from `pivotal` to `vmware`.
+
+[33mcommit f2d9c9b63fadb913b3087c1a7a19db769d731be0[m
+Author: Dave Syer <dsyer@vmware.com>
+Date:   Fri Feb 24 09:23:35 2023 +0000
+
+    Remove unnecessary native hint
+
+[33mcommit 1079767adc4576db0804c6d615c209c3d1cf351f[m
+Author: Dave Syer <dsyer@vmware.com>
+Date:   Wed Feb 22 09:45:28 2023 +0000
+
+    Update actions
+
+[33mcommit 635b0a9755ae93bc17bd0c7e4d49a7b385bb227d[m
+Author: Dave Syer <dsyer@vmware.com>
+Date:   Tue Feb 21 11:50:38 2023 +0000
+
+    Update to Spring Boot 3.0.2
+
+[33mcommit b298af380dfe37cbab19fe8328e89adb0cdded1a[m
+Author: Dave Syer <dsyer@vmware.com>
+Date:   Tue Feb 21 11:46:22 2023 +0000
+
+    Remove unnecessary model attribute
+
+[33mcommit ca055dbbe1f05a91c355242552a0b7ed20569a60[m
+Author: Dave Syer <dsyer@vmware.com>
+Date:   Fri Jan 27 09:56:03 2023 +0000
+
+    Update references to Java version in README
+    
+    Fixes #1151
+
+[33mcommit 10b13eb5b1f7f287774df05074bbff963a4d2907[m
+Author: Dave Syer <dsyer@vmware.com>
+Date:   Fri Jan 27 09:41:58 2023 +0000
+
+    Address review comment
+
+[33mcommit 6be2a5870d328dc10bffbcf17b424e67cb4720ef[m
+Author: SmolParascythe <106285195+SmolParascythe@users.noreply.github.com>
+Date:   Wed Jul 20 20:25:49 2022 -0700
+
+    Concise readme and link edits
+
+[33mcommit 05468bc14b34e1486414994bbe003a81308be147[m
+Author: Dave Syer <dsyer@vmware.com>
+Date:   Sat Jan 14 14:10:28 2023 +0000
+
+    Update build.gradle
+
+[33mcommit 6580e8b6cfa246422399eb0640ef93c30396115d[m
+Author: Dave Syer <dsyer@vmware.com>
+Date:   Mon Jan 9 11:55:04 2023 +0000
+
+    Bump Spring Boot and tidy up plugins
+
+[33mcommit e8e37b35c3c1f8c49582b8bcaa53df957729ec33[m
+Author: Dave Syer <dsyer@vmware.com>
+Date:   Tue Dec 20 11:41:53 2022 +0000
+
+    Fix CI
+
+[33mcommit f5b1ebc96545df0932111446b0796919fe380391[m
+Author: Dave Syer <dsyer@vmware.com>
+Date:   Tue Dec 20 11:09:10 2022 +0000
+
+    Update Gradle build
+
+[33mcommit dade7fcf31248b21eb158985b250c436b2e9eb54[m
+Author: Dave Syer <dsyer@vmware.com>
+Date:   Tue Dec 20 10:44:30 2022 +0000
+
+    Tweaks for Boot 3.0.0
+
+[33mcommit f3a8d244b2d3c52325941d09cdeb1b07b8b37815[m
+Author: Sébastien Deleuze <sdeleuze@vmware.com>
+Date:   Tue Oct 25 15:41:45 2022 +0200
+
+    Upgrade to Spring Boot 3.0 RC1
+
+[33mcommit f53e0d098ef417a0f6438f91efb24a7d2bf34daf[m
+Author: Sébastien Deleuze <sdeleuze@vmware.com>
+Date:   Sun Oct 16 21:21:27 2022 +0200
+
+    Additional setup to support native image creation.
+    
+     - Switch to Caffeine for caching since it is supported on native unlike Ehcache
+     - Use latest metadata repository 0.2.3 (will be the default with Native Build Tools 0.9.15)
+     - Registers resource hints for WebJars and db resource directory
+
+[33mcommit 1e56f6fd8099e53e8c6ad4c4ac70696e30364038[m
+Author: Oliver Drotbohm <odrotbohm@vmware.com>
+Date:   Sat Oct 1 17:50:40 2022 +0100
+
+    Add JAXB API to compile time dependencies.
+    
+    Needed for JAXB annotations in the sources on Java 17.
+
+[33mcommit 1315cf6e1f1e88e4850e5573388a89ba4469df07[m
+Author: Dave Syer <dsyer@vmware.com>
+Date:   Wed Mar 30 13:58:39 2022 +0000
+
+    Migrate to Spring Boot 3
+
+[33mcommit 9ecdc1111e3da388a750ace41a125287d9620534[m
+Author: Oliver Drotbohm <odrotbohm@vmware.com>
+Date:   Tue Oct 25 21:26:05 2022 +0200
+
+    Polish Thymeleaf templates.
+    
+    Make sure we use the suggested fragment inclusion syntax. Use th:insert instead of th:include. Use simpler URI path segment templating to avoid duplication of expressions.
+    
+    Avoid trailing slashes in URIs creates as upcoming Spring Boot versions will not map the trailing slash flavors of defined URI mappings.
+
+[33mcommit a5cbb8505a1df3c348c06607933a07fc8c87c222[m
+Author: Sébastien Deleuze <sdeleuze@users.noreply.github.com>
+Date:   Sun Oct 16 17:12:23 2022 +0200
+
+    Use WebJars versioned URLs (#1099)
+    
+    In order to improve efficiency (see spring-projects/spring-framework#27619)
+    and allow native image compatibility, this commit uses WebJars versioned URLs
+    which are supported out of the box on Spring Boot via /META-INF/resources
+    default resource location configuration, removing the need to use
+    webjars-locator-core dependency and WebJarsResourceResolver.
+    
+    I have been able to measure a consistent 5% startup time improvement on
+    the JVM with that simple change on my local machine.
+
+[33mcommit 89f7b4ee96b8dd354d56ff2211bb1ffe762ba24c[m
+Author: Dave Syer <dsyer@vmware.com>
+Date:   Tue Sep 27 17:14:13 2022 +0000
+
+    Tweak devcontainer so java and permissions work
+
+[33mcommit f48227aea0e4056e1b9105494ea2f6360f3975f3[m
+Author: Kiyeon Cho <qsky8520@gmail.com>
+Date:   Sat Sep 24 14:40:31 2022 +0900
+
+    Readability improvements & Use stream instread of forEach (#1055)
+    
+    * Use stream instead of forEach on find PetType logic of parse()
+    
+    * Improve controllers readability
+    
+    * Rollback stream instead of for-each
+
+[33mcommit 7e91b98f713557ffd980535cf02d8a8e397a20f0[m
+Author: Dave Syer <dsyer@vmware.com>
+Date:   Thu Sep 15 07:47:28 2022 +0000
+
+    Change CI step names
+
+[33mcommit 70f615afd15f4651be1a55dddb5e3df0cf6e8234[m
+Author: Dave Syer <dsyer@vmware.com>
+Date:   Wed Sep 14 17:05:06 2022 +0000
+
+    Add support and CI tests for Java 8
+
+[33mcommit 53343c27abcedf58ff51d896f36af5a437b391c4[m
+Author: Martin Lippert <mlippert@gmail.com>
+Date:   Tue Sep 13 11:34:16 2022 +0000
+
+    launch java tooling in standard mode right away
+
+[33mcommit d3aabf8462c9320ed1ed84cd0d04efdade48a48b[m
+Author: Dave Syer <dsyer@vmware.com>
+Date:   Mon Sep 12 11:05:37 2022 +0000
+
+    Attempt to fix codespaces
+
+[33mcommit 39b3ef8b31bb0f80c6379e35bfe23a09677b16a1[m
+Author: Dave Syer <dsyer@vmware.com>
+Date:   Mon Sep 5 13:19:53 2022 +0000
+
+    Ensure gradle home is set in container
+
+[33mcommit 276880edef4c3d1029865d19d6d28e982b9d4d01[m
+Author: dgcd <dgnedin@mail.ru>
+Date:   Thu Sep 1 23:29:06 2022 +0300
+
+    Upgrade to Gradle 7.5.1 and to Spring Boot 2.7.3
+
+[33mcommit 6f9dbf5a9edc57f89ea3d1fb5f9e6cf4975d63bf[m
+Author: Dave Syer <dsyer@vmware.com>
+Date:   Mon Aug 22 11:56:41 2022 +0000
+
+    Mention Gradle at top level in README
+
+[33mcommit c5763046dde0fad4524d44c1b687d6afe287507f[m
+Author: Shweta Tyagi <57443664+shwetatyagi22@users.noreply.github.com>
+Date:   Mon Aug 22 14:53:03 2022 +0400
+
+    Removed unnecessary semicolons (#998)
+
+[33mcommit a3294f2df7ee90ce656abfe1ebc9d15b633a4a31[m
+Author: robertson-neil <robertson-neil@users.noreply.github.com>
+Date:   M
