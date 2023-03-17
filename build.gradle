@@ -6,6 +6,7 @@ plugins {
 }
 
 apply plugin: 'java'
+apply plugin: 'maven-publish'
 
 group = 'org.springframework.samples'
 version = '3.0.0'
@@ -14,6 +15,28 @@ sourceCompatibility = '17'
 repositories {
   mavenCentral()
 }
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = 'pl.pwasil'
+            artifactId = 'moj_projekt'
+            from components.java
+            artifact(file("$buildDir/libs/${project.name}-${project.version}.jar")) {
+                classifier ''
+        }
+        }
+    }
+    repositories {
+        maven {
+            credentials {
+                username = "admin"
+                password = "password123"
+            }
+
+            url = "https://nexus.pwasil.pl/repository/demo/"
+        }
+    }
 
 ext.webjarsFontawesomeVersion = "4.7.0"
 ext.webjarsBootstrapVersion = "5.2.3"
@@ -39,4 +62,5 @@ dependencies {
 
 tasks.named('test') {
   useJUnitPlatform()
+}
 }
