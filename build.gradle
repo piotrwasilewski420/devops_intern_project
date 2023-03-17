@@ -13,18 +13,19 @@ version = '3.0.0'
 sourceCompatibility = '17'
 
 repositories {
-  mavenCentral()
+    maven {
+        url "https://nexus.pwasil.pl/repository/maven-mirror/"
+    }
 }
+
 
 publishing {
     publications {
-        maven(MavenPublication) {
-            groupId = 'pl.pwasil'
-            artifactId = 'moj_projekt'
+        myLibrary(MavenPublication) {
             from components.java
-            artifact(file("$buildDir/libs/${project.name}-${project.version}.jar")) {
-                classifier ''
-        }
+            groupId 'org.springframework.samples'
+            artifactId 'pet-clinic'
+            version '3.0.0'
         }
     }
     repositories {
@@ -34,7 +35,7 @@ publishing {
                 password = "password123"
             }
 
-            url = "https://nexus.pwasil.pl/repository/demo/"
+            url = "https://nexus.pwasil.pl/repository/pet-clinic/"
         }
     }
 
