@@ -13,31 +13,11 @@ version = '3.0.0'
 sourceCompatibility = '17'
 
 repositories {
-    maven {
-        url "https://nexus.pwasil.pl/repository/maven-mirror/"
-    }
+  mavenCentral()
 }
 
 
-publishing {
-    publications {
-        myLibrary(MavenPublication) {
-            from components.java
-            groupId 'org.springframework.samples'
-            artifactId 'pet-clinic'
-            version '3.0.0'
-        }
-    }
-    repositories {
-        maven {
-            credentials {
-                username = "admin"
-                password = "password123"
-            }
 
-            url = "https://nexus.pwasil.pl/repository/pet-clinic/"
-        }
-    }
 
 ext.webjarsFontawesomeVersion = "4.7.0"
 ext.webjarsBootstrapVersion = "5.2.3"
@@ -63,5 +43,4 @@ dependencies {
 
 tasks.named('test') {
   useJUnitPlatform()
-}
 }

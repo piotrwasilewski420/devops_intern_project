@@ -1,0 +1,21 @@
+pipeline {
+  agent {
+    label 'worker-node-1'
+  }
+
+  stages {
+    stage('Build') {
+      steps {
+        // Use Gradle to build the project and run tests
+        sh './gradlew build'
+      }
+    }
+
+    stage('Test') {
+      steps {
+        // Use Gradle to run tests
+        sh './gradlew test'
+      }
+    }
+  }
+}
