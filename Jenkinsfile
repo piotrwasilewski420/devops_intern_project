@@ -17,6 +17,7 @@ pipeline {
         // Use Gradle to run tests
         sh './gradlew test'
         echo 'Running tests...'
+        
       }
     }
   }
