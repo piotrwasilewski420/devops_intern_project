@@ -21,7 +21,7 @@ pipeline {
       steps {
         // Use Gradle to run tests
         sh './gradlew test'
-        echo 'Running tests...'
+        echo 'Running tests..'
       }
     }
   }
