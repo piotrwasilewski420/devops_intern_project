@@ -1,27 +1,29 @@
 pipeline {
-  agent any
+
+  agent 'worker-node'
+
   options {
-    timestamps()
-    skipDefaultCheckout(true)
+
+    buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')
+
   }
+
   stages {
-    stage('Checkout') {
+
+    stage('Hello') {
+
       steps {
-        checkout scm
+
+        sh '''
+
+          java -version
+
+        '''
+
       }
-    }
-    stage('Build') {
-      steps {
-        sh 'echo "Building the project...'
-        sh './gradlew build'
-      }
+
     }
 
-    stage('Test') {
-      steps {
-        sh './gradlew test'
-        echo 'Running tests.'
-      }
-    }
   }
+
 }
