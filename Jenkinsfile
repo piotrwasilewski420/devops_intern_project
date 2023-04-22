@@ -1,6 +1,6 @@
 pipeline {
 
-  agent 'worker-node'
+  label 'worker-node'
 
   options {
 
@@ -13,6 +13,7 @@ pipeline {
     stage('Hello') {
 
       steps {
+
 
         sh '''
 
