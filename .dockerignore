@@ -1,0 +1,24 @@
+# Gradle build files
+.gradle/
+build/
+
+# IDE files
+.idea/
+*.iml
+
+# Logs and caches
+*.log
+*.log.*
+*.json
+*.lock
+*.tar
+*.gz
+*.zip
+docker-compose.*
+node_modules/
+npm-debug.log*
+
+# Temporary files
+*.swp
+.DS_Store
+Thumbs.db

@@ -1,22 +1,20 @@
 # Step 1: Build the application with Gradle
-FROM gradle:jdk11 AS builder
-
+FROM openjdk AS builder
+RUN microdnf install findutils
 # Set the working directory
-WORKDIR /home/gradle/project
+WORKDIR /app
 
 # Copy the Gradle files and source code
-COPY --chown=gradle:gradle build.gradle gradlew gradlew.bat settings.gradle ./
-COPY --chown=gradle:gradle src/ src/
-RUN ls -la
+COPY . .
 # Build the application with Gradle
-RUN ./gradlew build 
+RUN ./gradlew bootJar --no-daemon
 
 # Step 2: Create a minimal Docker image with the application JAR
-FROM openjdk:11-jre-slim
-
+FROM openjdk
+RUN microdnf install findutils
 # Set the working directory and copy the application JAR
 WORKDIR /app
-COPY --from=builder /home/gradle/project/build/libs/petclinic-*.jar ./petclinic.jar
+COPY --from=builder /app/build/libs/*.jar ./petclinic.jar
 
 # Set the default command to run the application
 CMD ["java", "-jar", "petclinic.jar"]
