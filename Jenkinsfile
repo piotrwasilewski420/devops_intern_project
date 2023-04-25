@@ -14,7 +14,7 @@ pipeline {
     stages {
         stage('Build and Test') {
             steps {
-                sh './gradlew clean bootJar'
+                sh './gradlew clean bootJar test'
             }
             post {
                 success {
