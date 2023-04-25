@@ -5,7 +5,7 @@ pipeline {
     
     environment {
         // Define your environment variables here
-        NEXUS_URL = "https://nexus.pwasil.pl/repository/maven-snapshots-custom/"
+        NEXUS_URL = "nexus.pwasil.pl"
         NEXUS_CREDENTIALS_ID = "nexus-credentials"
         DOCKERHUB_REGISTRY = "https://index.docker.io/v1/"
         DOCKERHUB_CREDENTIALS_ID = "dockerhub-credentials"
@@ -29,11 +29,11 @@ pipeline {
                 script {
                     nexusArtifactUploader(
                         nexusVersion: 'nexus3',
-                        protocol: 'http',
+                        protocol: 'https',
                         nexusUrl: env.NEXUS_URL,
-                        groupId: 'com.example',
+                        groupId: 'pl.pwasil',
                         version: '1.0.0-SNAPSHOT',
-                        repository: 'snapshots',
+                        repository: 'maven-snapshots-custom',
                         credentialsId: env.NEXUS_CREDENTIALS_ID,
                         artifacts: [
                             [
