@@ -1,5 +1,4 @@
 pipeline {
-
   label 'worker-node'
 
   options {

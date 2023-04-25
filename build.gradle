@@ -13,7 +13,9 @@ version = '3.0.0'
 sourceCompatibility = '17'
 
 repositories {
-  mavenCentral()
+  maven {
+        url "https://nexus.pwasil.pl/repository/proxy-maven-custom/"
+    }
 }
 
 
