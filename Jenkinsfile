@@ -40,7 +40,7 @@ pipeline {
                                 artifactId: 'petclinic',
                                 type: 'jar',
                                 classifier: '',
-                                file: 'build/libs/petclinic-3.0.0.jar'
+                                file: 'build/libs/spring-petclinic-3.0.0.jar'
                             ]
                         ]
                     )
