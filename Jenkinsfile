@@ -2,7 +2,6 @@ pipeline {
     agent {
       label 'worker-node'
     }
-    
     environment {
         // Define your environment variables here
         NEXUS_URL = "nexus.pwasil.pl"
@@ -10,7 +9,6 @@ pipeline {
         DOCKERHUB_REGISTRY = "https://index.docker.io/v1/"
         DOCKERHUB_CREDENTIALS_ID = "dockerhub-credentials"
     }
-    
     stages {
         stage('Build and Test') {
             steps {
@@ -22,8 +20,7 @@ pipeline {
                     archiveArtifacts 'build/libs/*.jar'
                 }
             }
-        }
-        
+        }      
         stage('Upload Artifacts to Nexus') {
             steps {
                 script {
@@ -46,8 +43,7 @@ pipeline {
                     )
                 }
             }
-        }
-        
+        }      
         stage('Build and Push Docker Image') {
             steps {
                 script {
