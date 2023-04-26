@@ -29,7 +29,7 @@ pipeline {
                         protocol: 'https',
                         nexusUrl: env.NEXUS_URL,
                         groupId: 'pl.pwasil',
-                        version: '1.0.0-SNAPSHOT',
+                        version: '${BUILD_NUMBER}-SNAPSHOT',
                         repository: 'maven-snapshots-custom',
                         credentialsId: env.NEXUS_CREDENTIALS_ID,
                         artifacts: [
@@ -48,7 +48,7 @@ pipeline {
             steps {
                 script {
                     docker.withRegistry(env.DOCKERHUB_REGISTRY, env.DOCKERHUB_CREDENTIALS_ID) {
-                        def imageTag = "petclinic:1.0.0-SNAPSHOT"
+                        def imageTag = "petclinic:${BUILD_NUMBER}-SNAPSHOT"
                         def dockerfile = 'Dockerfile'
                         def context = '.'
                         
