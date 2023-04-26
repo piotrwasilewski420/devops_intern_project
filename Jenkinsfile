@@ -52,8 +52,8 @@ pipeline {
                         def dockerfile = 'Dockerfile'
                         def context = '.'
                         
-                        docker.build(imageTag, "-f ${dockerfile} ${context}")
-                        docker.push(imageTag)
+                        def image = docker.build(imageTag, "-f ${dockerfile} ${context}")
+                        image.push()
                     }
                 }
             }
