@@ -44,7 +44,7 @@ pipeline {
                 }
             }
         }      
-        stage('Build and Push Docker Image') {
+        stage('Build and Push Docker Image to DockerHub') {
             steps {
                 script {
                     docker.withRegistry(env.DOCKERHUB_REGISTRY, env.DOCKERHUB_CREDENTIALS_ID) {
