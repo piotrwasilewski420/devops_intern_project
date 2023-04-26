@@ -48,7 +48,7 @@ pipeline {
             steps {
                 script {
                     docker.withRegistry(env.DOCKERHUB_REGISTRY, env.DOCKERHUB_CREDENTIALS_ID) {
-                        def imageTag = "petclinic:${BUILD_NUMBER}-SNAPSHOT"
+                        def imageTag = "piotrwasilewski420/petclinic:${BUILD_NUMBER}-SNAPSHOT"
                         def dockerfile = 'Dockerfile'
                         def context = '.'
                         
