@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('Build and Test') {
             steps {
-                sh './gradlew clean bootJar test'
+                sh './gradlew clean shadowJar test'
             }
             post {
                 success {
@@ -22,7 +22,7 @@ pipeline {
         }   
         stage('Push to Nexus snapshot repository') {
             steps {
-               sh './gradlew publish'
+               sh "./gradlew -Pversion=${BUILD_NUMBER} publish"
             }
         }
         stage('Build and Push Docker Image to DockerHub') {
