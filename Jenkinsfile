@@ -17,38 +17,19 @@ pipeline {
             post {
                 success {
                     junit 'build/test-results/**/*.xml'
-                    archiveArtifacts 'build/libs/*.jar'
                 }
             }
-        }      
-        stage('Upload Artifacts to Nexus') {
+        }   
+        stage('Push to Nexus snapshot repository') {
             steps {
-                script {
-                    nexusArtifactUploader(
-                        nexusVersion: 'nexus3',
-                        protocol: 'https',
-                        nexusUrl: env.NEXUS_URL,
-                        groupId: 'pl.pwasil',
-                        version: '${BUILD_NUMBER}-SNAPSHOT',
-                        repository: 'maven-snapshots-custom',
-                        credentialsId: env.NEXUS_CREDENTIALS_ID,
-                        artifacts: [
-                            [
-                                artifactId: 'petclinic',
-                                type: 'jar',
-                                classifier: '',
-                                file: 'build/libs/spring-petclinic-3.0.0.jar'
-                            ]
-                        ]
-                    )
-                }
+               sh './gradlew publish'
             }
-        }      
+        }
         stage('Build and Push Docker Image to DockerHub') {
             steps {
                 script {
                     docker.withRegistry(env.DOCKERHUB_REGISTRY, env.DOCKERHUB_CREDENTIALS_ID) {
-                        def imageTag = "piotrwasilewski420/petclinic:${BUILD_NUMBER}-SNAPSHOT"
+                        def imageTag = "piotrwasilewski420/petclinic-snapshots:${BUILD_NUMBER}-SNAPSHOT"
                         def dockerfile = 'Dockerfile'
                         def context = '.'
                         
