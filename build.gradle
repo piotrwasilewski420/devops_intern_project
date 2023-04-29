@@ -9,7 +9,7 @@ plugins {
 apply plugin: 'java'
 apply plugin: 'maven-publish'
 
-group = 'pl.pwasil'
+group = 'org.springframework.samples'
 version project.hasProperty('version') ? version : '1.0.0' 
 sourceCompatibility = '17'
 
