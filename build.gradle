@@ -3,14 +3,13 @@ plugins {
   id 'org.springframework.boot' version '3.0.4'
   id 'io.spring.dependency-management' version '1.1.0'
   id 'org.graalvm.buildtools.native' version '0.9.20'
-  id 'com.github.johnrengelman.shadow' version '8.1.1'
 }
 
 apply plugin: 'java'
 apply plugin: 'maven-publish'
 
 group = 'org.springframework.samples'
-version project.hasProperty('version') ? version : '1.0.0' 
+
 sourceCompatibility = '17'
 
 repositories {
@@ -18,11 +17,13 @@ repositories {
         url "https://nexus.pwasil.pl/repository/proxy-maven-custom/"
     }
 }
-
+def myVersion = project.hasProperty('version') ? version : '1.0.0'
 publishing {
   publications {
-    shadow(MavenPublication) { publication ->
-      project.shadow.component(publication)
+    version = myVersion
+    def fileName = "build/libs/spring-petclinic-${myVersion}.jar" 
+    mavenJava(MavenPublication) {
+      artifact(file(fileName))
     }
   }
   repositories {
@@ -34,6 +35,9 @@ publishing {
       }
     }
   }
+  tasks.withType(PublishToMavenRepository) {
+        dependsOn bootJar
+    }
 }
 
 ext.webjarsFontawesomeVersion = "4.7.0"

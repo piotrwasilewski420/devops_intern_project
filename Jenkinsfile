@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('Build and Test') {
             steps {
-                sh './gradlew clean shadowJar test'
+                sh './gradlew clean test'
             }
             post {
                 success {
