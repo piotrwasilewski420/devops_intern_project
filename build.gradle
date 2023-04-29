@@ -8,7 +8,7 @@ plugins {
 apply plugin: 'java'
 apply plugin: 'maven-publish'
 
-group = 'org.springframework.samples'
+group = 'pl.pwasil'
 
 sourceCompatibility = '17'
 
